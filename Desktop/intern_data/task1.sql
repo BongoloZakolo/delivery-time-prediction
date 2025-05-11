@@ -2,7 +2,7 @@ USE droptime;
 
 SELECT
     op.product_id AS productID,
-    SUM(p.weight) AS totalWeight
+    SUM(op.quantity * p.weight) AS totalWeight
 FROM orders AS o
 JOIN orders_products AS op
 ON o.order_id = op.order_id
